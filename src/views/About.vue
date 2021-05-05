@@ -4,13 +4,13 @@
 
     <p> Enter key word to look for results: </p>
     <br/>
-    <input v-model="searchInput" placeholder="enter book title, author or isbn">
+    <input v-model="searchInput" placeholder="enter key-word">
     <button v-on:click="getBookData()"> Search</button>
     <br/>
     <br/>
     {{ booksData }}
 
-    <table align="center" border="1">
+    <table border="1" style="width:60%" align="center">
       <tr>
         <td> Book title</td>
         <td> Author</td>
@@ -21,6 +21,7 @@
         <td> Price</td>
         <td> Image</td>
         <td> Store</td>
+        <td> Link </td>
       </tr>
       <tr v-for="book in booksData">
         <td> {{ book.bookTitle }}</td>
@@ -32,6 +33,7 @@
         <td> {{ book.price }}</td>
         <td> {{ book.urlImage }}</td>
         <td> {{ book.storeName }}</td>
+        <td> {{ book.urlData }}</td>
       </tr>
     </table>
 
