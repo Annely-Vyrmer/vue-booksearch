@@ -6,10 +6,11 @@
     <br/>
     <input v-model="searchInput" placeholder="enter book title, author or isbn">
     <button v-on:click="getBookData()"> Search</button>
+    <br/>
+    <br/>
     {{ booksData }}
-    <br/>
-    <br/>
-    <table align="center">
+
+    <table align="center" border="1">
       <tr>
         <td> Book title</td>
         <td> Author</td>
@@ -25,12 +26,12 @@
         <td> {{ book.bookTitle }}</td>
         <td> {{ book.author }}</td>
         <td> {{ book.isbn }}</td>
-        <td> {{ book.YearOfPublishing }}</td>
-        <td> {{ book.numberOfPages }}No. of pages</td>
+        <td> {{ book.yearOfPublishing }}</td>
+        <td> {{ book.numberOfPages }}</td>
         <td> {{ book.format }}</td>
         <td> {{ book.price }}</td>
-        <td> {{ book.image }}</td>
-        <td> {{ book.store }}</td>
+        <td> {{ book.urlImage }}</td>
+        <td> {{ book.storeName }}</td>
       </tr>
     </table>
 
