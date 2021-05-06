@@ -16,6 +16,7 @@
 .my-background .my-searchBlock {
     color:black;
     width: 700px;
+
 }
 .text-field-wrapper {
     display: flex;
@@ -24,4 +25,9 @@
     font-family: Montserrat;
     font-size:x-large;
     font-weight: bold;
+}
+.search-button{
+    background: #cbf1f1;
+
+
 }
