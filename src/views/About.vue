@@ -56,7 +56,6 @@ export default{
   },
   methods: {
     'getBookData': function (){
-      location.reload()
       this.$http.get('api/booksearch/'+this.searchInput)
       .then(response=> {
         console.log(response);
