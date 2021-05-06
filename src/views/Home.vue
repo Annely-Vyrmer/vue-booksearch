@@ -1,15 +1,15 @@
 <template>
-  <hello-world />
+  <book-find />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import BookFind from '../components/BookFind'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      BookFind,
     },
   }
 </script>

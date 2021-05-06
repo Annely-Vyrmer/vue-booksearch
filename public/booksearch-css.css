@@ -1,0 +1,27 @@
+.my-background{
+    background: no-repeat url("/image_bookstore2.jpg");
+    background-size: cover;
+    height: 800px;
+}
+.intro-text {
+    color: #cbf1f1;
+    font-size: 86px;
+    width: 800px;
+    padding-top: 200px;
+    margin: 0 auto;
+}
+.theme--light.v-text-field--solo.my-searchBlock > .v-input__control > .v-input__slot{
+    background: #cbf1f1;
+}
+.my-background .my-searchBlock {
+    color:black;
+    width: 700px;
+}
+.text-field-wrapper {
+    display: flex;
+}
+.my-font{
+    font-family: Montserrat;
+    font-size:x-large;
+    font-weight: bold;
+}
