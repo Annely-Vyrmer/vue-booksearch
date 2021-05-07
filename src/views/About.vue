@@ -6,8 +6,7 @@
     <br/>
     <input v-model="searchInput" placeholder="enter key-word">
     <button v-on:click="getBookData()"> Search</button>
-    <br/>
-    <br/>
+
     <p v-if="errorMessage" >{{errorMessage}}</p>
     <p v-if="booksData.length===0 && noSearch===false"> No books found </p>
 
