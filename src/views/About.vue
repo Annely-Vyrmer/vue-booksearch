@@ -8,7 +8,9 @@
     <button v-on:click="getBookData()"> Search</button>
     <br/>
     <br/>
-    {{ booksData }}
+    <p v-if="errorMessage" >{{errorMessage}}</p>
+    <p v-if="booksData.length===0 && noSearch===false"> No books found </p>
+
 
     <table border="1" style="width:60%" align="center">
       <tr>
@@ -46,7 +48,10 @@ export default{
   data: function () {
     return {
       'searchInput': '',
-      'booksData': ''
+      'booksData': '',
+      'errorMessage': '',
+      'notFoundMessage': '',
+      'noSearch': true
     }
   },
   methods: {
@@ -55,9 +60,10 @@ export default{
       .then(response=> {
         console.log(response);
         this.booksData=response.data
+        this.noSearch=false
       })
       .catch(response=>{
-        alert('error has occurred')
+        this.errorMessage='Insert valid search parameters'
       })
     }
   }
