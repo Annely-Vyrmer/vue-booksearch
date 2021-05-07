@@ -29,39 +29,29 @@
 
         <v-col cols="12">
           <div class="headline1">LEITUD RAAMATUD</div>
-          <div class="regular-text"> Siia tuleb errorMessage kui ühtegi raamatut ei leitud</div>
-          <p v-if="errorMessage" >{{errorMessage}}</p>
-          <p v-if="booksData.length===0 && noSearch===false"> No books found </p>
+
+          <p v-if="errorMessage" class="regular-text">{{errorMessage}}</p>
+          <p v-if="booksData.length===0 && noSearch===false" class="regular-text"> No books found </p>
         </v-col>
 
-        <table border="1" style="width:60%" align="center">
-          <tr>
-            <td> Book title</td>
-            <td> Author</td>
-            <td> ISBN</td>
-            <td> Year of publishing</td>
-            <td> No. of pages</td>
-            <td> Format</td>
-            <td> Price</td>
-            <td> Image</td>
-            <td> Store</td>
-            <td> Link </td>
-          </tr>
-          <tr v-for="book in booksData">
-            <td> {{ book.bookTitle }}</td>
-            <td> {{ book.author }}</td>
-            <td> {{ book.isbn }}</td>
-            <td> {{ book.yearOfPublishing }}</td>
-            <td> {{ book.numberOfPages }}</td>
-            <td> {{ book.format }}</td>
-            <td> {{ book.price }}</td>
-            <td> {{ book.urlImage }}</td>
-            <td> {{ book.storeName }}</td>
-            <td> {{ book.urlData }}</td>
-          </tr>
-        </table>
+<!--        <table border="1" style="width:60%" align="center">-->
+<!--          <tr v-for="book in booksData">-->
+<!--            <td> {{ book.bookTitle }}</td>-->
+<!--            <td> {{ book.author }}</td>-->
+<!--            <td> {{ book.isbn }}</td>-->
+<!--            <td> {{ book.yearOfPublishing }}</td>-->
+<!--            <td> {{ book.numberOfPages }}</td>-->
+<!--            <td> {{ book.format }}</td>-->
+<!--            <td> {{ book.price }}</td>-->
+<!--            <td> {{ book.urlImage }}</td>-->
+<!--            <td> {{ book.storeName }}</td>-->
+<!--            <td> {{ book.urlData }}</td>-->
+<!--          </tr>-->
+<!--        </table>-->
 
         <v-card
+            style="padding: 8px"
+            v-for="book in booksData"
             class="mx-auto"
             color="#cbf1f1"
             max-width="300"
@@ -75,24 +65,23 @@
             ></v-list-item-avatar>
           </v-list-item>
           <v-list-item-content>
-              <v-list-item-title class="book-headline">Raamatu pealkiri</v-list-item-title>
-              <v-list-item-title class="book-headline">Autor</v-list-item-title>
+              <v-list-item-title class="book-headline">{{ book.bookTitle }}</v-list-item-title>
+              <v-list-item-title class="book-headline">{{ book.author }}</v-list-item-title>
           </v-list-item-content>
             <v-list-item-content>
-              <v-list-item-subtitle class="book-regular-text">Ribakood: </v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">Ilmumisaasta: </v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">Kirjastus: </v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">Lehekülgi: </v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">Formaat: </v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">E-pood: </v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Ribakood: {{ book.isbn }} </v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Ilmumisaasta: {{ book.yearOfPublishing }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Lehekülgi: {{ book.numberOfPages }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Formaat: {{ book.format }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Pood: {{ book.storeName }}</v-list-item-subtitle>
             </v-list-item-content>
 
           <v-card-actions>
             <v-list-item-content>
-              <v-list-item-title class="book-price">HIND</v-list-item-title>
+              <v-list-item-title class="book-price">{{ book.price }}</v-list-item-title>
             </v-list-item-content>
             <v-spacer></v-spacer>
-            <v-btn class="search-button white--text" color="#136581" v-on:click="search()">Mine ostma</v-btn>
+            <v-btn class="search-button white--text" color="#136581" v-on:click="search()">Mine ostma {{ book.urlData }}</v-btn>
           </v-card-actions>
         </v-card>
 
@@ -132,7 +121,7 @@ export default{
   data: function () {
     return {
       'searchInput': '',
-      'booksData': '',
+      'booksData': [],
       'errorMessage': '',
       'notFoundMessage': '',
       'noSearch': true
@@ -145,9 +134,11 @@ export default{
             console.log(response);
             this.booksData=response.data
             this.noSearch=false
+            this.errorMessage=''
           })
           .catch(response=>{
             this.errorMessage='Insert valid search parameters'
+            this.booksData=[]
           })
     }
   }

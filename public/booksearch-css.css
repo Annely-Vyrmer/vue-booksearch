@@ -1,7 +1,7 @@
 .my-background{
     background: no-repeat url("/image_bookstore2.jpg");
     background-size: cover;
-    height: 800px;
+    height: 500px;
 }
 .intro-text {
     color: #cbf1f1;
