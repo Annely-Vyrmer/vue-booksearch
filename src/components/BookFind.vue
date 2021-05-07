@@ -58,11 +58,17 @@
             tiled
         >
           <v-list-item three-line>
-            <v-list-item-avatar
-                tile
-                size="160"
-                color="grey"
-            ></v-list-item-avatar>
+            <v-img
+                height="160"
+                :src="book.urlImage"
+                contain
+            ></v-img>
+
+            <!--            <v-list-item-avatar-->
+<!--                tile-->
+<!--                size="160"-->
+<!--                color="grey"-->
+<!--            ></v-list-item-avatar>-->
           </v-list-item>
           <v-list-item-content>
               <v-list-item-title class="book-headline">{{ book.bookTitle }}</v-list-item-title>

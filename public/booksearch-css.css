@@ -7,7 +7,7 @@
     color: #cbf1f1;
     font-size: 86px;
     width: 800px;
-    padding-top: 200px;
+    padding-top: 100px;
     margin: 0 auto;
 }
 .v-application .intro-text{
@@ -81,3 +81,8 @@
     text-align: left;
     margin-left: 8px;
 }
+.mx-auto.v-card.v-sheete.theme--light{
+    padding-bottom: 8px;
+}
+
+
