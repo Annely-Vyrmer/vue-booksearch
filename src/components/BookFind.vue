@@ -5,14 +5,21 @@
         <v-col class="my-background" cols="12">
           <div class="intro-text">LEIA PARIM RAAMATU HIND</div>
           <div class="text-field-wrapper">
+
+<!--            <input v-model="searchInput" placeholder="enter key-word">-->
+<!--            <button v-on:click="getBookData()"> Search</button>-->
+<!--            <p v-if="errorMessage" >{{errorMessage}}</p>-->
+<!--            <p v-if="booksData.length===0 && noSearch===false"> No books found </p>-->
+
             <v-text-field
+                input v-model="searchInput"
                 class="my-searchBlock"
                 hide-details="auto"
                 color="#cbf1f1"
                 placeholder="Sisesta autor, raamatu pealkiri või ISBN number"
                 solo
             ></v-text-field>
-            <v-btn class="search-button white--text" v-on:click="search()">OTSI</v-btn>
+            <v-btn class="search-button white--text" v-on:click="getBookData()">OTSI</v-btn>
           </div>
         </v-col>
 <!--        <p v-if="booksData.length==0" >"Raamatuid ei leitud"</p>-->
@@ -23,7 +30,36 @@
         <v-col cols="12">
           <div class="headline1">LEITUD RAAMATUD</div>
           <div class="regular-text"> Siia tuleb errorMessage kui ühtegi raamatut ei leitud</div>
+          <p v-if="errorMessage" >{{errorMessage}}</p>
+          <p v-if="booksData.length===0 && noSearch===false"> No books found </p>
         </v-col>
+
+        <table border="1" style="width:60%" align="center">
+          <tr>
+            <td> Book title</td>
+            <td> Author</td>
+            <td> ISBN</td>
+            <td> Year of publishing</td>
+            <td> No. of pages</td>
+            <td> Format</td>
+            <td> Price</td>
+            <td> Image</td>
+            <td> Store</td>
+            <td> Link </td>
+          </tr>
+          <tr v-for="book in booksData">
+            <td> {{ book.bookTitle }}</td>
+            <td> {{ book.author }}</td>
+            <td> {{ book.isbn }}</td>
+            <td> {{ book.yearOfPublishing }}</td>
+            <td> {{ book.numberOfPages }}</td>
+            <td> {{ book.format }}</td>
+            <td> {{ book.price }}</td>
+            <td> {{ book.urlImage }}</td>
+            <td> {{ book.storeName }}</td>
+            <td> {{ book.urlData }}</td>
+          </tr>
+        </table>
 
         <v-card
             class="mx-auto"
@@ -92,26 +128,29 @@
 </template>
 
 <script>
-export default {
-  name: 'BookFind',
-
-  data: () => ({
-
-    // whatsNext: [
-    //   {
-    //     text: 'Explore components',
-    //     href: 'https://vuetifyjs.com/components/api-explorer',
-    //   },
-    //   {
-    //     text: 'Select a layout',
-    //     href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-    //   },
-    //   {
-    //     text: 'Frequently Asked Questions',
-    //     href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-    //   },
-    // ],
-  }),
+export default{
+  data: function () {
+    return {
+      'searchInput': '',
+      'booksData': '',
+      'errorMessage': '',
+      'notFoundMessage': '',
+      'noSearch': true
+    }
+  },
+  methods: {
+    'getBookData': function (){
+      this.$http.get('api/booksearch/'+this.searchInput)
+          .then(response=> {
+            console.log(response);
+            this.booksData=response.data
+            this.noSearch=false
+          })
+          .catch(response=>{
+            this.errorMessage='Insert valid search parameters'
+          })
+    }
+  }
 }
 </script>
 
