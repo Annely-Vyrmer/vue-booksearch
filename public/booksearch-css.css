@@ -10,18 +10,74 @@
     padding-top: 200px;
     margin: 0 auto;
 }
+.v-application .intro-text{
+    line-height: 1.1;
+}
+
 .theme--light.v-text-field--solo.my-searchBlock > .v-input__control > .v-input__slot{
     background: #cbf1f1;
 }
 .my-background .my-searchBlock {
     color:black;
-    width: 700px;
+    width: 650px;
+    display: inline-block;
+
 }
 .text-field-wrapper {
-    display: flex;
+    display: block;
 }
 .my-font{
     font-family: Montserrat;
     font-size:x-large;
     font-weight: bold;
+}
+.headline1{
+    font-family: Montserrat;
+    margin-top: 60px;
+    color: #103c3c;
+    font-size: 46px;
+    font-weight: bolder;
+}
+.regular-text{
+    font-family: Montserrat;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: black;
+    font-size: 26px;
+    font-weight: normal;
+}
+.v-list-item__title.book-headline{
+    font-family: Montserrat;
+    margin-bottom: 4px;
+    color: black;
+    font-size: 18px;
+    font-weight: inherit;
+    text-align: center;
+}
+
+.book-regular-text{
+    font-family: Montserrat;
+    margin-bottom: 2px;
+    color: black;
+    font-size: 10px;
+    font-weight: inherit;
+    text-align: left;
+    margin-left: 16px;
+}
+.v-btn:not(.v-btn--round).v-size--default.search-button{
+    background-color: #136581;
+    height: 48px;
+    margin-left: 4px;
+}
+.v-card .v-list-item__content{
+    padding: 6px 0;
+}
+.book-price{
+    font-family: Montserrat;
+    margin-bottom: 2px;
+    color: darkred;
+    font-size: 38px;
+    font-weight: inherit;
+    text-align: left;
+    margin-left: 8px;
 }

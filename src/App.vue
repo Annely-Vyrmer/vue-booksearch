@@ -14,14 +14,6 @@
 <!--          transition="scale-transition"-->
 <!--          width="40"-->
 <!--        />-->
-<!--        <v-img-->
-<!--          alt="Vuetify Name"-->
-<!--          class="shrink mt-1 hidden-sm-and-down"-->
-<!--          contain-->
-<!--          min-width="100"-->
-<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"-->
-<!--          width="100"-->
-<!--        />-->
         <span class="my-font">BOOK FIND</span>
 <!--        <router-link to="/">Book Find </router-link>-->
 <!--        <router-link to="/about"> About</router-link>-->
