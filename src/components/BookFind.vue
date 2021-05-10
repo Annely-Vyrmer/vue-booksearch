@@ -50,7 +50,7 @@
 <!--        </table>-->
 
         <v-card
-            style="padding: 8px"
+            style="padding: 8px; margin-bottom: 16px"
             v-for="book in booksData"
             class="mx-auto"
             color="#cbf1f1"
@@ -59,7 +59,7 @@
         >
           <v-list-item three-line>
             <v-img
-                height="160"
+                height="190"
                 :src="book.urlImage"
                 contain
             ></v-img>
