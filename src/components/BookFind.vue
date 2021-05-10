@@ -28,10 +28,11 @@
 <!--        {{booksdata}}-->
 
         <v-col cols="12">
-          <div class="headline1">LEITUD RAAMATUD</div>
-
+<!--          <div class="headline1">LEITUD RAAMATUD</div>-->
+          <p v-if="noSearch===false && booksData.length!=0" class="headline1">LEITUD RAAMATUD</p>
           <p v-if="errorMessage" class="regular-text">{{errorMessage}}</p>
-          <p v-if="booksData.length===0 && noSearch===false" class="regular-text"> No books found </p>
+          <p v-if="booksData.length===0 && noSearch===false" class="regular-text"> Ei leitud raamatuid </p>
+
         </v-col>
 
 <!--        <table border="1" style="width:60%" align="center">-->
@@ -143,7 +144,7 @@ export default{
             this.errorMessage=''
           })
           .catch(response=>{
-            this.errorMessage='Insert valid search parameters'
+            this.errorMessage='Sisesta sobivad otsinguparameetrid'
             this.booksData=[]
           })
     }
