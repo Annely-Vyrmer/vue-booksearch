@@ -6,14 +6,6 @@
       flat
     >
       <div class="d-flex align-center">
-<!--        <v-img-->
-<!--          alt="Vuetify Logo"-->
-<!--          class="shrink mr-2"-->
-<!--          contain-->
-<!--          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"-->
-<!--          transition="scale-transition"-->
-<!--          width="40"-->
-<!--        />-->
         <span class="my-font">BOOK FIND</span>
 <!--        <router-link to="/">Book Find </router-link>-->
 <!--        <router-link to="/about"> About</router-link>-->
@@ -40,11 +32,11 @@
       </v-btn>
 
       <v-btn
-        href="https://www.rahvaraamat.ee/et"
+        href="https://www.raamatukoi.ee/"
         target="_blank"
         text
       >
-        <span class="mr-2">Rahva Raamat</span>
+        <span class="mr-2">Raamatukoi</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
