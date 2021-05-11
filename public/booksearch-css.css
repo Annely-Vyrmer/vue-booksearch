@@ -82,7 +82,13 @@
     font-weight: inherit;
     text-align: left;
     margin-left: 8px;
+    flex: none;
+
 }
+.v-list-item__content.book-price{
+    flex: none;
+}
+
 .mx-auto.v-card.v-sheet.theme--light.my-vcard{
     padding: 8px;
     color: #cbf1f1;
@@ -90,10 +96,7 @@
 
 }
 
-/*.v-responsive__content.my-book-image{*/
-/*    height: 100px;*/
-/*    background-position: left;*/
-/*}*/
+
 
 
 
