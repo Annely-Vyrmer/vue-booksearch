@@ -84,7 +84,7 @@
             </v-list-item-content>
 
           <v-card-actions>
-            <v-list-item-content>
+            <v-list-item-content class="book-price">
               <v-list-item-title class="book-price">{{ book.price }}</v-list-item-title>
             </v-list-item-content>
             <v-spacer></v-spacer>
