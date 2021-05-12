@@ -1,37 +1,43 @@
-.my-background{
+.my-font{                               /*Uus font Montserrat */
+    font-family: Montserrat;
+    font-size:x-large;
+    font-weight: bold;
+}
+.my-background{                         /*Pildi tausta blokk */
     background: no-repeat url("/image_bookstore2.jpg");
     background-size: cover;
     height: 500px;
 }
-.intro-text {
+.intro-text {                           /*Pildil oleva teksti stiil */
     color: #cbf1f1;
     font-size: 86px;
     width: 800px;
     padding-top: 100px;
     margin: 0 auto;
 }
-.v-application .intro-text{
+.v-application .intro-text{             /*Pildil olev tekst kahel real, milles reavahe väiksem*/
     line-height: 1.1;
-}
-
-.theme--light.v-text-field--solo.my-searchBlock > .v-input__control > .v-input__slot{
-    background: #cbf1f1;
-}
-.my-background .my-searchBlock {
-    color:black;
-    width: 650px;
-    display: inline-block;
-
 }
 .text-field-wrapper {
     display: block;
 }
-.my-font{
-    font-family: Montserrat;
-    font-size:x-large;
-    font-weight: bold;
+.theme--light.v-text-field--solo.my-searchBlock > .v-input__control > .v-input__slot{   /*OTSI kasti taust rohekas */
+    background: #cbf1f1;
 }
-.headline1{
+.my-background .my-searchBlock {        /*OTSI kasti tekstivärv, laius ja asetus */
+    color:black;
+    width: 650px;
+    display: inline-block;
+}
+.v-btn:not(.v-btn--round).v-size--default.search-button{    /*OTSI nupp värv, kõrgus ja joondus vasakult */
+     background-color: #136581;
+     height: 48px;
+     margin-left: 4px;
+     color: white;
+    font-weight: bold;
+ }
+
+.headline1{                             /*"Leitud raamatud tekst: joondus ülevalt/alt, teksti värv, suurus" */
     font-family: Montserrat;
     margin-top: 70px;
     margin-bottom: 40px;
@@ -39,7 +45,7 @@
     font-size: 46px;
     font-weight: bolder;
 }
-.regular-text{
+.regular-text{                          /*ERROR message teksti stiil*/
     font-family: Montserrat;
     margin-top: 20px;
     margin-bottom: 50px;
@@ -47,17 +53,18 @@
     font-size: 26px;
     font-weight: normal;
 }
-.v-list-item__title.book-headline{
+
+.v-list-item__title.book-headline{      /*Raamatu pealkiri ja autor*/
     font-family: Montserrat;
-    margin-bottom: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     color: black;
     font-size: 18px;
     font-weight: inherit;
     text-align: center;
     white-space: normal;
 }
-
-.book-regular-text{
+.book-regular-text{                     /*Raamatu väike tekst*/
     font-family: Montserrat;
     margin-bottom: 2px;
     color: black;
@@ -66,15 +73,10 @@
     text-align: left;
     margin-left: 16px;
 }
-.v-btn:not(.v-btn--round).v-size--default.search-button{
-    background-color: #136581;
-    height: 48px;
-    margin-left: 4px;
-}
 .v-card .v-list-item__content{
     padding: 6px 0;
 }
-.v-list-item__title.book-price{
+.v-list-item__title.book-price{         /*Raamatu hind*/
     font-family: Montserrat;
     margin-bottom: 2px;
     color: darkred;
@@ -85,12 +87,16 @@
     flex: none;
 
 }
-.v-list-item__content.book-price{
+.v-list-item__content.book-price{       /*Et hind mahuks täielikult reale ära */
     flex: none;
 }
 
-.mx-auto.v-card.v-sheet.theme--light.my-vcard{
+.v-card__actions.book-price-alignment{  /*hinnablokk bottom joondus - ei tööta*/
+    alignment: bottom;
+}
+.mx-auto.my-vcard{                      /*v-card stiil - ei tööta*/
     padding: 8px;
+    margin-bottom: 16px;
     color: #cbf1f1;
     max-width: 300px;
 

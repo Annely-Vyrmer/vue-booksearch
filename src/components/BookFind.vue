@@ -6,26 +6,16 @@
           <div class="intro-text">LEIA PARIM RAAMATU HIND</div>
           <div class="text-field-wrapper">
 
-<!--            <input v-model="searchInput" placeholder="enter key-word">-->
-<!--            <button v-on:click="getBookData()"> Search</button>-->
-<!--            <p v-if="errorMessage" >{{errorMessage}}</p>-->
-<!--            <p v-if="booksData.length===0 && noSearch===false"> No books found </p>-->
-
             <v-text-field
                 input v-model="searchInput"
                 class="my-searchBlock"
                 hide-details="auto"
-                color="#cbf1f1"
-                placeholder="Sisesta autor, raamatu pealkiri või ISBN number"
+                placeholder="Sisesta autor või raamatu pealkiri"
                 solo
             ></v-text-field>
-            <v-btn class="search-button white--text" v-on:click="getBookData()">OTSI</v-btn>
+            <v-btn class="search-button" v-on:click="getBookData()">OTSI</v-btn>
           </div>
         </v-col>
-<!--        <p v-if="booksData.length==0" >"Raamatuid ei leitud"</p>-->
-<!--        {{booksdata}}-->
-<!--        <p v-if="errorMessage" >{{errorMessage}}</p>-->
-<!--        {{booksdata}}-->
 
         <v-col cols="12">
 <!--          <div class="headline1">LEITUD RAAMATUD</div>-->
@@ -65,55 +55,27 @@
                 contain
             ></v-img>
 
-            <!--            <v-list-item-avatar-->
-<!--                tile-->
-<!--                size="160"-->
-<!--                color="grey"-->
-<!--            ></v-list-item-avatar>-->
           </v-list-item>
           <v-list-item-content>
               <v-list-item-title class="book-headline">{{ book.bookTitle }}</v-list-item-title>
               <v-list-item-title class="book-headline">{{ book.author }}</v-list-item-title>
           </v-list-item-content>
             <v-list-item-content>
-              <v-list-item-subtitle class="book-regular-text" v-if="book.isbn!=null" >Ribakood: {{ book.isbn }}</v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text" v-if="book.yearOfPublishing!=null">Ilmumisaasta: {{ book.yearOfPublishing }}</v-list-item-subtitle>
-             <!-- <v-list-item-subtitle class="book-regular-text">Lehekülgi: {{ book.numberOfPages }} -->
-              <v-list-item-subtitle class="book-regular-text" v-if="book.format!=null">Formaat: {{ book.format }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Ribakood: {{ book.isbn }} </v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Ilmumisaasta: {{ book.yearOfPublishing }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Lehekülgi: {{ book.numberOfPages }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text">Formaat: {{ book.format }}</v-list-item-subtitle>
               <v-list-item-subtitle class="book-regular-text">Pood: {{ book.storeName }}</v-list-item-subtitle>
             </v-list-item-content>
 
-          <!-- NB! Raamatukoil on kohati tühjad stringid ilmumisaasta koha peal-->
-
-          <v-card-actions>
+          <v-card-actions class="book-price-alignment">
             <v-list-item-content class="book-price">
               <v-list-item-title class="book-price">{{ book.price }}</v-list-item-title>
             </v-list-item-content>
             <v-spacer></v-spacer>
-            <v-btn class="search-button white--text" color="#136581" v-on:click="search()">Mine ostma {{ book.urlData }}</v-btn>
+            <v-btn class="search-button" color="#136581" v-on:click="search()">Mine ostma {{ book.urlData }}</v-btn>
           </v-card-actions>
         </v-card>
-
-<!--        <v-col-->
-<!--            class="mb-5"-->
-<!--            cols="12"-->
-<!--        >-->
-<!--          <h2>-->
-<!--            What's next?-->
-<!--          </h2>-->
-
-<!--          <v-row justify="center">-->
-<!--            <a-->
-<!--                v-for="(next, i) in whatsNext"-->
-<!--                :key="i"-->
-<!--                :href="next.href"-->
-<!--                class="subheading mx-3"-->
-<!--                target="_blank"-->
-<!--            >-->
-<!--              {{ next.text }}-->
-<!--            </a>-->
-<!--          </v-row>-->
-<!--        </v-col>-->
 
         <v-col
             class="mb-15"
