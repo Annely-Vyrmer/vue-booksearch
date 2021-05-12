@@ -61,10 +61,9 @@
               <v-list-item-title class="book-headline">{{ book.author }}</v-list-item-title>
           </v-list-item-content>
             <v-list-item-content>
-              <v-list-item-subtitle class="book-regular-text">Ribakood: {{ book.isbn }} </v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">Ilmumisaasta: {{ book.yearOfPublishing }}</v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">Lehekülgi: {{ book.numberOfPages }}</v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text">Formaat: {{ book.format }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text" v-if="book.isbn!=null" >Ribakood: {{ book.isbn }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text" v-if="book.yearOfPublishing!=null">Ilmumisaasta: {{ book.yearOfPublishing }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text" v-if="book.format!=null">Formaat: {{ book.format }}</v-list-item-subtitle>
               <v-list-item-subtitle class="book-regular-text">Pood: {{ book.storeName }}</v-list-item-subtitle>
             </v-list-item-content>
 
