@@ -91,9 +91,20 @@
     flex: none;
 }
 
-.v-card__actions.book-price-alignment{  /*hinnablokk bottom joondus - ei tööta*/
-    alignment: bottom;
+.v-card__actions.book-price-alignment{  /*hinnablokk bottom joondus, seoses v-card classiga*/
+    align-items: end;
+    position: absolute;
+    bottom: 0;
 }
+.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default.buy-button{
+    background-color: #136581;
+    height: 48px;
+    margin-left: 4px;
+    color: white;
+    font-weight: bold;
+    left: 50px;
+}
+
 .mx-auto.my-vcard{                      /*v-card stiil - ei tööta*/
     padding: 8px;
     margin-bottom: 16px;

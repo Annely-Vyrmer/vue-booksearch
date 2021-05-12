@@ -41,11 +41,11 @@
 <!--        </table>-->
 
         <v-card
-            style="padding: 8px; margin-bottom: 16px"
+            style="padding: 8px; margin-bottom: 16px; padding-bottom: 50px"
             v-for="book in booksData"
             class="mx-auto"
             color="#cbf1f1"
-            max-width="300"
+            width="300"
             tiled
         >
           <v-list-item three-line>
@@ -72,7 +72,7 @@
               <v-list-item-title class="book-price">{{ book.price }}</v-list-item-title>
             </v-list-item-content>
             <v-spacer></v-spacer>
-            <v-btn class="search-button" color="#136581" v-on:click="search()">Mine ostma {{ book.urlData }}</v-btn>
+            <v-btn right class="buy-button" v-on:click="search()">Mine ostma {{ book.urlData }}</v-btn>
           </v-card-actions>
         </v-card>
 
