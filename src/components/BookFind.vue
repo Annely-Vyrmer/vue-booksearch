@@ -73,7 +73,7 @@
             </v-list-item-content>
             <v-spacer></v-spacer>
 
-            <v-btn right class="buy-button" v-on:click="search(book)">Mine ostma</v-btn>
+            <v-btn class="buy-button" v-on:click="search(book)">Mine ostma</v-btn>
 
           </v-card-actions>
         </v-card>
