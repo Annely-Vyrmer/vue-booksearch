@@ -6,7 +6,7 @@
       flat
     >
       <div class="d-flex align-center">
-        <span class="my-font">BOOK FIND</span>
+        <span class="my-font">LEIA RAAMAT</span>
 <!--        <router-link to="/">Book Find </router-link>-->
 <!--        <router-link to="/about"> About</router-link>-->
       </div>
