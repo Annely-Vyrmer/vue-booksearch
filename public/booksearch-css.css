@@ -91,7 +91,10 @@
     flex: none;
 }
 
-.mx-auto.my-vcard{  /*v-card stiil */
+.v-card__actions.book-price-alignment{  /*hinnablokk bottom joondus - ei tööta*/
+    alignment: bottom;
+}
+.mx-auto.my-vcard{                      /*v-card stiil - ei tööta*/
     padding: 8px;
     margin-bottom: 16px;
     color: #cbf1f1;

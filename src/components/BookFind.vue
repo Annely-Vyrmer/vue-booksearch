@@ -10,7 +10,7 @@
                 input v-model="searchInput"
                 class="my-searchBlock"
                 hide-details="auto"
-                placeholder="Sisesta autor, raamatu pealkiri või ISBN number"
+                placeholder="Sisesta autor või raamatu pealkiri"
                 solo
             ></v-text-field>
             <v-btn class="search-button" v-on:click="getBookData()">OTSI</v-btn>
@@ -68,7 +68,7 @@
               <v-list-item-subtitle class="book-regular-text">Pood: {{ book.storeName }}</v-list-item-subtitle>
             </v-list-item-content>
 
-          <v-card-actions>
+          <v-card-actions class="book-price-alignment">
             <v-list-item-content class="book-price">
               <v-list-item-title class="book-price">{{ book.price }}</v-list-item-title>
             </v-list-item-content>
