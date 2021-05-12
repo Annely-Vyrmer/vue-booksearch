@@ -61,9 +61,9 @@
               <v-list-item-title class="book-headline">{{ book.author }}</v-list-item-title>
           </v-list-item-content>
             <v-list-item-content>
-              <v-list-item-subtitle class="book-regular-text" v-if="book.isbn!=null" >Ribakood: {{ book.isbn }}</v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text" v-if="book.yearOfPublishing!=null">Ilmumisaasta: {{ book.yearOfPublishing }}</v-list-item-subtitle>
-              <v-list-item-subtitle class="book-regular-text" v-if="book.format!=null">Formaat: {{ book.format }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text" v-if="book.isbn!=null && book.isbn!=''">Ribakood: {{ book.isbn }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text" v-if="book.yearOfPublishing!=null && book.yearOfPublishing!=''">Ilmumisaasta: {{ book.yearOfPublishing }}</v-list-item-subtitle>
+              <v-list-item-subtitle class="book-regular-text" v-if="book.format!=null && book.format!=''">Formaat: {{ book.format }}</v-list-item-subtitle>
               <v-list-item-subtitle class="book-regular-text">Pood: {{ book.storeName }}</v-list-item-subtitle>
             </v-list-item-content>
 
@@ -72,7 +72,7 @@
               <v-list-item-title class="book-price">{{ book.price }}</v-list-item-title>
             </v-list-item-content>
             <v-spacer></v-spacer>
-            <v-btn class="search-button" color="#136581" v-on:click="search()">Mine ostma {{ book.urlData }}</v-btn>
+            <v-btn class="search-button" color="#136581" v-on:click="search(book)">Mine ostma </v-btn>
           </v-card-actions>
         </v-card>
 
@@ -110,6 +110,10 @@ export default{
             this.errorMessage='Sisesta sobivad otsinguparameetrid'
             this.booksData=[]
           })
+    },
+    'search': function (book){
+      console.log(JSON.stringify(book));
+      window.open(book.urlPage, "_blank")
     }
   }
 }
