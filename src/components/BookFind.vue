@@ -4,7 +4,7 @@
       <v-row class="text-center">
         <v-col class="my-background" cols="12">
           <div class="intro-text">LEIA PARIM RAAMATU HIND</div>
-          <div class="text-field-wrapper">
+          <div>
 
             <v-text-field
                 input v-model="searchInput"
@@ -40,14 +40,7 @@
 <!--          </tr>-->
 <!--        </table>-->
 
-        <v-card
-            style="padding: 8px; margin-bottom: 16px; padding-bottom: 50px"
-            v-for="book in booksData"
-            class="mx-auto"
-            color="#cbf1f1"
-            width="300"
-            tiled
-        >
+        <v-card class="mx-auto my-vcard" v-for="book in booksData" tiled>
           <v-list-item three-line>
             <v-img
                 height="190"
