@@ -66,7 +66,7 @@
             </v-list-item-content>
             <v-spacer></v-spacer>
 
-            <v-btn class="buy-button" v-on:click="search(book)">Mine ostma</v-btn>
+            <v-btn class="buy-button" v-on:click="goBuy(book)">Mine ostma</v-btn>
 
           </v-card-actions>
         </v-card>
@@ -98,17 +98,17 @@ export default{
           .then(response=> {
             console.log(response);
             this.booksData=response.data
-            this.noSearch=false
-            this.errorMessage=''
+            this.noSearch=false                   //hakkaks kuvama LEITUD RAAMATUD teksti
+            this.errorMessage=''                  //teeks otsi lahtri tühjaks
           })
           .catch(response=>{
             this.errorMessage='Sisesta sobivad otsinguparameetrid'
-            this.booksData=[]
+            this.booksData=[]                     //selleks, et ei näitaks vanu tulemusi
           })
     },
-    'search': function (book){
-      console.log(JSON.stringify(book));
-      window.open(book.urlPage, "_blank")
+    'goBuy': function (book){                     //mine ostma nupp
+      console.log(JSON.stringify(book));          //console logi jaoks
+      window.open(book.urlPage, "_blank")   //avaks uues aknas raamatu lingi
     }
   }
 }
